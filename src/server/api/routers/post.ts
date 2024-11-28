@@ -29,4 +29,12 @@ export const postRouter = createTRPCRouter({
       orderBy: { createdAt: "desc" },
     });
   }),
+
+  // Get the last 10 posts
+  getLast10: publicProcedure.query(({ ctx }) => {
+    return ctx.db.post.findMany({
+      take: 10,
+      orderBy: { createdAt: "desc" },
+    });
+  }),
 });
