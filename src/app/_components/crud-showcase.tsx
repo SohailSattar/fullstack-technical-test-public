@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { api } from "~/trpc/server";
 import { CreatePost } from "./create-post";
-import PostTable from "./post-table";
 
 export default async function CrudShowcase() {
   const latestPost = await api.post.getLatest();
